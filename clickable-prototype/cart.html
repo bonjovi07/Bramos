@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bag | Bramos Clothing</title>
+    <script src="jquery-3.6.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/cart-style.css">
+    <script>
+        $(document).ready(function(){
+            let count = (document.querySelectorAll('.bag-item')).length;
+            $('#total-items-subheading > span').text(count);
+            $('#bag-qty').text(count);
+
+            $('p.add').on('click', function(){
+                let num = parseInt($(this).siblings('p.qty').text());
+                $(this).siblings('p.qty').text(num+1);
+            })
+            $('p.minus').on('click', function(){
+                let num = parseInt($(this).siblings('p.qty').text());
+                if (num > 1) {
+                    $(this).siblings('p.qty').text(num-1);
+                }
+            })
+            $('img.delete-from-bag').on('click', function(){
+                if (confirm("This item will be deleted from your cart.")) {
+                    $(this).parent().parent().prev('.line').hide();
+                    $(this).parent().parent().hide();
+                    count--;
+                    $('#total-items-subheading > span').text(count);
+                    $('#bag-qty').text(count);
+                }
+
+                if (count == 0) {
+                    $('.bag-contents').append('<p> Your shopping bag is empty. </p>');
+                    $('#subtotal span').text('0');
+                    $('#checkout-btn').attr('disabled', true);
+                }         
+            })
+
+            $('#continue-btn').on('click', function(){
+                window.location.replace("home.html");
+            })   
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- NAVBAR -->
+        <header>
+            <a href="home.html">
+                <img src="assets/images/bramos-logo.jpg" alt="" id="logo">
+            </a>
+            <nav>
+                <form action="#">
+                    <input type="search" name="search" id="search" placeholder="Search for a product">
+                    <img src="assets/images/search-black.png" alt="" srcset="">
+                </form>
+                <div class="shopping-bag-icon">
+                    <a href="cart.html">
+                        <img id="shopping-bag" src="assets/images/shopping-bag.png" alt="Shopping Bag">
+                        <p id="bag-qty">5</p>
+                    </a>
+                </div>
+                <a href="#">
+                    <img id="profile" src="assets/images/profile.png" alt="Profile" srcset="">
+                </a>
+            </nav>
+        </header>
+
+        <!-- SHOPPING BAG CONTENTS -->
+        <div class="bag-details">
+            <h1>Your Shopping Bag</h1>
+            <p id="total-items-subheading">Total Items (<span>5</span>)</p>
+            <div class="bag-contents">
+
+                <!-- CHECK DESCRIPTION HERE (applies to all other items) -->
+
+                <!-- div.line is the gray lines on top of each cart item -->
+                <div class="line"></div> 
+
+                <div class="bag-item">
+                    <!-- div.item-details contains the product image, name and price -->
+                    <div class="item-details">
+                        <img src="assets/images/ali-v2.jpg" alt="">
+                        <div class="name-and-price">
+                            <p class="item-name">Alibaba Version 2 (Black)</p>
+                            <p class="item-price">₱350</p>
+                        </div>
+                    </div>
+                    
+                    <!-- form contains the quantity buttons and delete button -->
+                    <form action="#">
+                        <input type="hidden" name="quantity">
+                        <!-- this is the quantity 'buttons' -->
+                        <div class="quantity-btns">
+                            <p class="minus">-</p>
+                            <p class="qty">1</p>
+                            <p class="add">+</p>
+                        </div>
+                        <!-- this image is the delete 'button' -->
+                        <img class="delete-from-bag" src="assets/images/trash.png" alt="" srcset="">
+                    </form>
+                </div>
+
+                <div class="line"></div>
+                <div class="bag-item">
+                    <div class="item-details">
+                        <img src="assets/images/bramos1.jpg" alt="">
+                        <div class="name-and-price">
+                            <p class="item-name">Tees Bundle (Package 2)</p>
+                            <p class="item-price">₱350</p>
+                        </div>
+                    </div>
+                    
+                    <form action="#">
+                        <input type="hidden" name="quantity">
+                        <div class="quantity-btns">
+                            <p class="minus">-</p>
+                            <p class="qty">1</p>
+                            <p class="add">+</p>
+                            
+                        </div>
+                        <img class="delete-from-bag" src="assets/images/trash.png" alt="" srcset="">
+                    </form>
+                </div>
+
+                <div class="line"></div>
+                <div class="bag-item">
+                    <div class="item-details">
+                        <img src="assets/images/alien.jpg" alt="">
+                        <div class="name-and-price">
+                            <p class="item-name">3 Faced Alien</p>
+                            <p class="item-price">₱350</p>
+                        </div>
+                    </div>
+                    
+                    <form action="#">
+                        <input type="hidden" name="quantity">
+                        <div class="quantity-btns">
+                            <p class="minus">-</p>
+                            <p class="qty">1</p>
+                            <p class="add">+</p>
+                            
+                        </div>
+                        <img class="delete-from-bag" src="assets/images/trash.png" alt="" srcset="">
+                    </form>
+                </div>
+
+                <div class="line"></div>
+                <div class="bag-item">
+                    <div class="item-details">
+                        <img src="assets/images/absolute-white.jpg" alt="">
+                        <div class="name-and-price">
+                            <p class="item-name">As Above So Below (White)</p>
+                            <p class="item-price">₱350</p>
+                        </div>
+                    </div>
+                    
+                    <form action="#">
+                        <input type="hidden" name="quantity">
+                        <div class="quantity-btns">
+                            <p class="minus">-</p>
+                            <p class="qty">1</p>
+                            <p class="add">+</p>
+                            
+                        </div>
+                        <img class="delete-from-bag" src="assets/images/trash.png" alt="" srcset="">
+                    </form>
+                </div>
+
+                <div class="line"></div>
+                <div class="bag-item">
+                    <div class="item-details">
+                        <img src="assets/images/absolute.jpg" alt="">
+                        <div class="name-and-price">
+                            <p class="item-name">As Above So Below (Black)</p>
+                            <p class="item-price">₱350</p>
+                        </div>
+                    </div>
+                    
+                    <form action="#">
+                        <input type="hidden" name="quantity">
+                        <div class="quantity-btns">
+                            <p class="minus">-</p>
+                            <p class="qty">1</p>
+                            <p class="add">+</p>
+                            
+                        </div>
+                        <img class="delete-from-bag" src="assets/images/trash.png" alt="" srcset="">
+                    </form>
+                </div>
+            </div>
+
+            <!-- THE STUFF BELOW THE SHOPPING BAG CONTENTS -->
+            <div class="bag-actions">
+                <div class="bag-total">
+                    <p id="subtotal">Subtotal: ₱<span>1600</span>*</p>
+                    <p>*Without shipping fee & taxes</p>
+                </div>
+                
+                <div class="bag-btns">
+                    <button id="checkout-btn">CHECKOUT</button>
+                    <button id="continue-btn">CONTINUE SHOPPING</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

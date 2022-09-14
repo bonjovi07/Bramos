@@ -1,0 +1,380 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --gold: #D8A738;
+}
+
+.container {
+
+}
+
+    .container header {
+        height: 60px;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        box-shadow: 1px 10px 8px -1px rgba(0,0,0,0.38);
+        -webkit-box-shadow: 1px 10px 8px -1px rgba(0,0,0,0.38);
+        -moz-box-shadow: 1px 10px 8px -1px rgba(0,0,0,0.38);
+        position: relative;
+    }
+
+        a {
+            height: 90%;
+        }
+        header img#logo {
+            height: 100%;
+        }
+
+        header nav {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+        }
+
+            nav form {
+                width: 70%;
+                display: flex;
+                align-items: center;
+
+            }
+                nav div.shopping-bag-icon {
+                    position: relative;
+                }
+
+                nav div.shopping-bag-icon p{
+                    position: absolute;
+                    top: 10px;
+                    left: 20px;
+                    color: black;
+                }
+
+                nav form input {
+                    padding: 5px 10px;
+                    border-radius: 5px 0 0 5px;
+                    outline: none;
+                    width: 100%;
+                    border: none;
+                }
+
+                nav form img {
+                    height: 28px;
+                    padding: 2px;
+                    background-color: white;
+                    border-radius: 0 5px 5px 0;
+                }
+
+            nav a img#shopping-bag {
+                height: 30px;
+                margin-left: 10px;
+            }
+
+            nav a img#profile {
+                height: 38px;
+                margin-left: 10px;
+            }
+
+            nav img#hamburger-menu {
+                height: 30px;
+                display: none;
+            }
+    
+    .banner {
+        height: 95vh;
+    }
+
+        .banner img#desktop-banner {
+            height: 100%;
+            width: 100%;
+            object-fit:cover;
+        }
+        
+        .banner img#mobile-banner {
+            display: none;
+        }
+
+    .catalog {
+        min-height: 50vh;
+        padding: 100px;
+        text-align: center;
+    }
+        
+        .catalog h1 {
+            font-size: 2.3rem;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .catalog div.items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+            div.items div.item-card {
+                height: 250px;
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                margin: 2% 2.5%;
+                transition: box-shadow 0.2s ease-in-out;
+            }
+
+            div.items div.item-card:hover {
+                box-shadow: -3px 2px 30px 0px rgba(216,167,56,0.50);
+                -webkit-box-shadow: -3px 2px 30px 0px rgba(216,167,56,0.50);
+                -moz-box-shadow: -3px 2px 30px 0px rgba(216,167,56,0.50);
+                cursor: pointer;
+                
+            }
+
+                div.item-card img {
+                    height: 90%;
+                    object-fit: cover;
+                }
+
+                div.item-card div.name-and-price {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 5px;
+                    padding: 0 5px;
+                }
+
+                    div.name-and-price p {
+                        font-weight: bold;
+                        text-overflow: ellipsis;
+                    }
+
+                    p.product-price {
+                        color: var(--gold);
+                    }
+        .catalog button {
+            margin-top: 30px;
+            padding: 10px 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: var(--gold);
+            border: none;
+            color: white;
+            transition: background-color 0.2s ease-in-out;
+            
+        }
+
+        .catalog button:hover {
+            background-color: black;
+            cursor: pointer;
+            
+        }
+
+        .gallery {
+
+        }
+            .gallery h1 {
+                padding-left: 100px;
+                font-size: 2.3rem;
+                margin-bottom: 50px;
+            }
+
+            .gallery img {
+                width: 25%;
+                height: 60vh;
+                object-fit: cover;
+                margin-top: -5px;
+                transition: filter 0.2s ease-in-out;
+            }
+
+            .gallery img:hover {
+                filter: sepia(100%);
+                cursor: pointer;
+            }
+
+        
+        .branding {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+            .branding h1 {
+                font-size: 2.3rem;
+            }
+
+            .branding h2 {
+                font-weight: normal;
+                color: var(--gold);
+            }
+
+            .branding form {
+                margin-top: 100px;
+            }
+
+                .branding form h3 {
+                    font-weight: normal;
+                    font-size: 1.5rem;
+                    margin-bottom: 20px;
+                }
+
+                .branding form div.subscribe-field {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                    div.subscribe-field input[type="email"] {
+                        width: 350px;
+                        padding: 5px 10px;
+                        font-size: 1rem;
+                        outline: none;
+
+                    }
+
+                    div.subscribe-field input[type="submit"] {
+                        padding: 10px 15px;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        background-color: var(--gold);
+                        border: none;
+                        color: white;
+                        transition: background-color 0.2s ease-in-out;
+                    }
+
+                    div.subscribe-field input[type="submit"]:hover {
+                        background-color: black;
+                        cursor: pointer;
+                    }
+
+        footer {
+            color: black;
+            padding: 50px 100px;
+            text-align: right;
+            position: relative;
+        }
+            
+            footer h3 {
+                font-size: 2.3rem;
+                text-align: left;
+            
+            }
+
+            footer > img {
+                height: 10vh;
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+            }
+
+            footer div.socials {
+                padding: 100px 0;
+                display: flex;
+                justify-content: center;
+            }
+                
+                div.socials img {
+                    margin: 0 10px;
+                }
+                
+
+
+@media only screen and (max-width: 700px) {
+    nav form {
+        display: none;
+    }
+
+    .banner {
+        background-color: black;
+        height: 40vh;
+    }
+        .banner img {
+            object-fit:cover;
+        }
+
+    .catalog {
+        padding: 35px;
+    }
+        .catalog h1, .gallery h1, footer h3 {
+            font-size: 1.5rem;
+        }
+
+    .gallery h1 {
+        padding-left: 35px;
+        margin-bottom: 30px;
+    }
+
+        .gallery img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+    .branding h1 {
+        font-size: 1.8rem;
+    }
+
+    .branding h2{
+        font-size: 1rem;
+    }
+
+        .branding form h3 {
+            font-size: 1rem;
+        }
+
+        div.branding div.subscribe-field {
+            flex-direction: column;
+            align-items: center;
+        }
+
+                div.subscribe-field input#email {
+                    margin-bottom: 20px;
+                    width: 250px;
+                }
+
+    footer {
+        padding: 30px;
+    }
+
+        footer div.socials {
+            padding: 30px 0 100px 0;
+        }
+
+            footer div.socials img {
+                height: 50px;
+            }
+}
+
+@media only screen and (min-width: 300px) {
+    .gallery img {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 700px){
+    .banner {
+        height: 50vh
+    }
+    
+    .banner img {
+        object-fit: cover;
+    }
+    .gallery img {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    nav form {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 701px) {
+    .gallery img {
+        width: 25%;
+    }
+}
